@@ -1,0 +1,15 @@
+<app-adminnav></app-adminnav>
+<form (ngSubmit)="generateReport()" #reportForm="ngForm">
+    <label for="type">Report Type:</label>
+    <select id="type" [(ngModel)]="reportType" name="type" required>
+      <option value="reservations">Reservations</option>
+      <option value="payments">Payments</option>
+    </select>
+  
+    <button type="submit">Generate Report</button>
+  </form>
+  
+  <div *ngIf="reportData">
+    
+  </div>
+  

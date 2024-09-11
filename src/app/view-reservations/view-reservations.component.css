@@ -1,0 +1,82 @@
+.reservation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+  }
+  
+  thead th {
+    background-color: #4caf50;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 8px;
+  }
+  
+  tbody td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 8px;
+    color: #333;
+  }
+  
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    tr {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    td {
+      padding: 10px;
+      text-align: right;
+      position: relative;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  
+    thead {
+      display: none;
+    }
+  }
+  

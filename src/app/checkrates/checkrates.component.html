@@ -1,0 +1,48 @@
+<app-customernav></app-customernav>
+<div class="check-rates-container">
+  <h2>Check Rates and Availability</h2>
+  <form (ngSubmit)="onCheck()" #checkForm="ngForm">
+    <div class="form-group">
+      <label for="serviceType">Service Type:</label>
+      <select id="serviceType" name="serviceType" [(ngModel)]="serviceType" required>
+        <option value="">--Select Service Type--</option>
+        <option value="dine-in">Dine-In</option>
+        <option value="delivery">Delivery</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="facilityType">Facility Type:</label>
+      <select id="facilityType" name="facilityType" [(ngModel)]="facilityType" required>
+        <option value="">--Select Facility Type--</option>
+        <option value="seating">Seating Arrangement</option>
+        <option value="accessibility">Accessibility</option>
+        <option value="parking">Parking</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="priceRangeMin">Price Range Min:</label>
+      <input type="number" id="priceRangeMin" name="priceRangeMin" [(ngModel)]="priceRangeMin">
+    </div>
+
+    <div class="form-group">
+      <label for="priceRangeMax">Price Range Max:</label>
+      <input type="number" id="priceRangeMax" name="priceRangeMax" [(ngModel)]="priceRangeMax">
+    </div>
+
+    <button type="submit" [disabled]="!checkForm.form.valid">Check Availability</button>
+  </form>
+
+  <div *ngIf="results.length > 0">
+    <h3>Available Services:</h3>
+    <ul>
+      <li *ngFor="let result of results">
+        <h4>{{ result.name }}</h4>
+        <p>Description: {{ result.description }}</p>
+        <p>Price: {{ result.pricing }}</p>
+        <p>Availability: {{ result.availability }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

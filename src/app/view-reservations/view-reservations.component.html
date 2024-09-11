@@ -1,0 +1,32 @@
+<app-staffnav></app-staffnav>
+<div class="reservation-container">
+  <h2>Reservation List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Service Type</th>
+        <th>Guests</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Special Requests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.id }}</td>
+        <td>{{ reservation.name }}</td>
+        <td>{{ reservation.email }}</td>
+        <td>{{ reservation.phone }}</td>
+        <td>{{ reservation.service_type }}</td>
+        <td>{{ reservation.guests }}</td>
+        <td>{{ reservation.reservation_date | date:'shortDate' }}</td>
+        <td>{{ reservation.reservation_time | date:'shortTime' }}</td>
+        <td>{{ reservation.special_requests }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<app-adminnav></app-adminnav>
+<div class="container">
+  <h2>Query Details</h2>
+  
+
+  <button (click)="fetchQueryDetails()">View Query Details</button>
+  
+
+  <div *ngIf="queryDetails">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Query ID</th>
+          <th>User ID</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ queryDetails.id }}</td>
+          <td>{{ queryDetails.userid }}</td>
+          <td>{{ queryDetails.queryText }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

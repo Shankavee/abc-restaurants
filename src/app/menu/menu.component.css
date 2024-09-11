@@ -1,0 +1,37 @@
+/* Styling for the menu container */
+.menu-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .menu-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Flexbox styling for image gallery */
+  .photography-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between images */
+  }
+  
+  /* Styling for individual images */
+  .photography-images img {
+    width: 200px; /* Fixed width for each image */
+    height: 150px; /* Fixed height for each image */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  }
+  
+  /* Hover effects for images */
+  .photography-images img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  }
+  

@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%; 
+}
+
+.home-header {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    background-size: cover; 
+    background-position: center; 
+    height: 96vh; 
+    margin-bottom: 0; 
+}
+
+.home-content {
+    padding: 1rem; 
+}
+
+.home-content h1 {
+    font-family: cursive;
+    font-size:10cap;
+    font-style: initial;
+    margin: 0; 
+    color: #000bd6;
+}
+
+.home-content h2 {
+    font-size: 1.9rem;
+    color: #000000;
+    text-transform:initial; 
+    margin: 0; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

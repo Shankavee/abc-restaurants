@@ -1,0 +1,24 @@
+<div class="login-container" style="background-image: url('/assets/images1.jpg');">
+  <form (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm" class="login-form">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="role">Role</label><br>
+      <select id="role" name="role" ngModel required>
+        <option value="" disabled selected>Select your role</option>
+        <option value="customer">Customer</option>
+        <option value="staff">Staff</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    <a routerLink="/signup">Don't have an account? Sign Up</a>
+  </form>
+</div>

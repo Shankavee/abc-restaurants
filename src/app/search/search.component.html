@@ -1,0 +1,21 @@
+<app-customernav></app-customernav>
+<form (ngSubmit)="searchServices()">
+    <div>
+      <label for="serviceType">Service Type:</label>
+      <input type="text" id="serviceType" [(ngModel)]="searchCriteria.serviceType" name="serviceType">
+    </div>
+  
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" [(ngModel)]="searchCriteria.location" name="location">
+    </div>
+  
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="searchCriteria.date" name="date">
+    </div>
+  
+    <button type="submit">Search</button>
+  </form>
+  
+  

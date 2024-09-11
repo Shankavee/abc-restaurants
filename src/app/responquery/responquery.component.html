@@ -1,0 +1,11 @@
+<app-staffnav></app-staffnav>
+<div class="queries-list">
+    <div *ngFor="let query of queries" class="query-item">
+      <h3>{{ query.name }}</h3>
+      <p>{{ query.message }}</p>
+  
+      <textarea [(ngModel)]="query.responseMessage" placeholder="Enter your response"></textarea>
+      <button (click)="respond(query.id, query.responseMessage || '')">Send Response</button>
+    </div>
+  </div>
+  

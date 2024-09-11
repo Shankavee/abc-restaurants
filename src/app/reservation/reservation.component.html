@@ -1,0 +1,73 @@
+<app-customernav></app-customernav>
+<div class="reservation-container">
+    <br><br><br><br><br><br><br><br>
+    <h2>Make a Reservation</h2>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <!-- Customer Details -->
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" formControlName="name" placeholder="Enter your full name" required>
+            <div *ngIf="submitted && f['name'].errors" class="error">
+                <div *ngIf="f['name'].errors['required']">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter your email" required>
+            <div *ngIf="submitted && f['email'].errors" class="error">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Email must be valid</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" formControlName="phone" placeholder="Enter your phone number" required>
+            <div *ngIf="submitted && f['phone'].errors" class="error">
+                <div *ngIf="f['phone'].errors['required']">Phone number is required</div>
+            </div>
+        </div>
+
+    
+        <div class="form-group">
+            <label for="serviceType">Service Type:</label>
+            <select id="serviceType" formControlName="serviceType" required>
+                <option value="">--Select Service Type--</option>
+                <option value="dine-in">Dine-In</option>
+                <option value="delivery">Delivery</option>
+            </select>
+            <div *ngIf="submitted && f['serviceType'].errors" class="error">
+                <div *ngIf="f['serviceType'].errors['required']">Service type is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" formControlName="guests" min="1" max="20" placeholder="Enter number of guests" required>
+            <div *ngIf="submitted && f['guests'].errors" class="error">
+                <div *ngIf="f['guests'].errors['required']">Number of guests is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date">Reservation Date:</label>
+            <input type="date" id="date" formControlName="date" required>
+            <div *ngIf="submitted && f['date'].errors" class="error">
+                <div *ngIf="f['date'].errors['required']">Reservation date is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="time">Reservation Time:</label>
+            <input type="time" id="time" formControlName="time" required>
+            <div *ngIf="submitted && f['time'].errors" class="error">
+                <div *ngIf="f['time'].errors['required']">Reservation time is required</div>
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="requests">Special Requests:</label>
+            <textarea id="requests" formControlName="requests" placeholder="Enter any special requests (optional)"></textarea>
+        </div>
+
+        
+        <button type="submit" [disabled]="!reservationForm.valid">Submit Reservation</button>
+    </form>
+</div>

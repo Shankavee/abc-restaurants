@@ -1,0 +1,16 @@
+<app-customernav></app-customernav>
+<div class="offers-container">
+  <h2>Special Offers</h2>
+  <div *ngIf="offers.length > 0">
+    <div class="offer" *ngFor="let offer of offers">
+      <h3>{{ offer.title }}</h3>
+      <p>{{ offer.description }}</p>
+      <p><strong>Validity:</strong> {{ offer.validity }}</p>
+      <p><strong>Discount:</strong> {{ offer.discount }}%</p>
+    </div>
+  </div>
+  <div *ngIf="offers.length === 0">
+    <p>No offers available at the moment.</p>
+  </div>
+</div>
+

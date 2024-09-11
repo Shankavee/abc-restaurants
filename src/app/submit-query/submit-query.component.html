@@ -1,0 +1,8 @@
+<app-customernav></app-customernav>
+<div class="query-form">
+  <h3>Submit a Query</h3>
+  <form (ngSubmit)="onSubmit()" #queryForm="ngForm">
+    <textarea name="queryText" [(ngModel)]="queryText" required placeholder="Write your query here..."></textarea>
+    <button type="submit" [disabled]="!queryForm.form.valid">Submit</button>
+  </form>
+</div>
